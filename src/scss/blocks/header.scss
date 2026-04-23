@@ -22,8 +22,12 @@
     background-image: url(/img/bg-header-mobile.png);
   }
 
+  &__content {
+    display: grid;
+    justify-items: center;
+  }
+
   &__logo {
-    justify-self: center;
     @include utils.adaptive-value('margin-bottom', 56, 64);
   }
 

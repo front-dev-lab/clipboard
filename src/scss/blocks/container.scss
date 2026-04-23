@@ -1,7 +1,6 @@
 @use '../utils';
 
 .container {
-  display: grid;
   margin: 0 auto;
   max-width: utils.$max-width + px;
   height: 100%;
