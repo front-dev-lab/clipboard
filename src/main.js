@@ -26,7 +26,7 @@ const initObserver = () => {
       obs.unobserve(element);
     });
   }, {
-    scrollMargin: '-100px',
+    rootMargin: '-50px',
   });
 
   elements.forEach(element => observer.observe(element));
