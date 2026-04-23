@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  width: 125px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url(/img/icons/logo.svg);
+  background-size: cover;
+  background-position: center;
+
+  &--small {
+    width: 55px;
+  }
+}

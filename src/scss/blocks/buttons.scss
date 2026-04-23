@@ -1,0 +1,50 @@
+@use '../utils';
+@use '../typography';
+
+.buttons {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  width: max-content;
+
+  @include utils.onMobile {
+    grid-auto-flow: row;
+    row-gap: 24px;
+    width: 100%;
+  }
+
+  &__button {
+    display: block;
+    height: 56px;
+    border-radius: 28px;
+    border-bottom: 3px solid;
+    padding-inline: 36px;
+    @extend %button-text;
+    color: utils.$c_white;
+    transition-property: background-color;
+    transition-duration: utils.$amin-time;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+
+    @include utils.onMobile {
+      width: 100%;
+    }
+
+    &--green {
+      border-color: utils.$c_dark-green;
+      background-color: utils.$c_green;
+
+      &:hover {
+        background-color: utils.$c_light-green;
+      }
+    }
+
+    &--blue {
+      border-color: utils.$c_dark-blue;
+      background-color: utils.$c_blue;
+
+      &:hover {
+        background-color: utils.$c_light-blue;
+      }
+    }
+  }
+}

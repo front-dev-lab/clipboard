@@ -1,0 +1,50 @@
+@use '../utils';
+@use '../typography';
+
+.header {
+  display: grid;
+  align-content: center;
+  min-height: 500px;
+  height: 100vh;
+  max-height: 800px;
+  background-image: url(/img/bg-header-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+
+  @include utils.onTablet {
+    max-height: 1200px;
+  }
+
+  @include utils.onMobile {
+    min-height: 700px;
+    max-height: 950px;
+    background-image: url(/img/bg-header-mobile.png);
+  }
+
+  &__logo {
+    justify-self: center;
+    @include utils.adaptive-value('margin-bottom', 56, 64);
+  }
+
+  &__article {
+    display: grid;
+    row-gap: 16px;
+    margin-bottom: 48px;
+    max-width: utils.$max-main-article-w;
+  }
+
+  &__title {
+    @extend %h1;
+    color: utils.$c_black;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__buttons {
+    justify-self: center;
+  }
+}

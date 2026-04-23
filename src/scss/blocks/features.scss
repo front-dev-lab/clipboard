@@ -1,0 +1,80 @@
+@use '../utils';
+@use '../typography';
+
+.features {
+  display: grid;
+  @include utils.adaptive-value('row-gap', 80, 65);
+
+  &__main-article {
+    justify-self: center;
+    display: grid;
+    @include utils.adaptive-value('row-gap', 19, 16);
+    max-width: utils.$max-main-article-w;
+    text-align: center;
+  }
+
+  &__title {
+    @extend %h2;
+    color: utils.$c_black;
+  }
+
+  &__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+
+    @include utils.onTablet {
+      display: block;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    justify-self: flex-end;
+    display: block;
+    height: 100%;
+
+    @include utils.onTablet {
+      position: static;
+      margin-bottom: 56px;
+      height: auto;
+      width: 100%;
+      @include utils.adaptive-value('padding-inline', utils.$max-page-padding, utils.$min-page-padding);
+    }
+  }
+
+  &__list {
+    grid-column: 2 / 3;
+    display: grid;
+    @include utils.adaptive-value('row-gap', 56, 48);
+    height: max-content;
+    margin-right: auto;
+    @include utils.adaptive-value('padding-top', 90, 0);
+    @include utils.adaptive-value('padding-bottom', 130, 0);
+    @include utils.adaptive-value('padding-inline', 110, utils.$min-page-padding);
+
+    @include utils.onTablet {
+      justify-content: center;
+      padding-block: 0;
+      @include utils.adaptive-value('padding-inline', utils.$max-page-padding, utils.$min-page-padding);
+      text-align: center;
+    }
+  }
+
+  &__article {
+    display: grid;
+    @include utils.adaptive-value('row-gap', 8, 10);
+    max-width: 350px;
+    @extend %secondary-text;
+  }
+
+  &__sub-title {
+    @extend %h3;
+    color: utils.$c_black;
+  }
+}

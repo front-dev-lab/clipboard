@@ -1,0 +1,35 @@
+@use '../utils';
+@use '../typography';
+
+.service-card {
+  max-width: 400px;
+  @extend %secondary-text;
+  text-align: center;
+
+  &__icon {
+    margin-inline: auto;
+    margin-bottom: 40px;
+    width: 44px;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    &--list {
+      background-image: url(/img/icons/icon-blacklist.svg);
+    }
+
+    &--edit-text {
+      background-image: url(/img/icons/icon-text.svg);
+    }
+
+    &--eye {
+      background-image: url(/img/icons/icon-preview.svg);
+    }
+  }
+
+  &__title {
+    @extend %h3;
+    color: utils.$c_black;
+  }
+}

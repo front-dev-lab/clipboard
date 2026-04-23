@@ -1,0 +1,29 @@
+@use '../utils';
+@use '../typography';
+
+.access {
+  text-align: center;
+
+  &__content {
+    display: grid;
+    justify-items: center;
+    @include utils.adaptive-value('row-gap', 110, 64);
+  }
+
+  &__article {
+    display: grid;
+    @include utils.adaptive-value('row-gap', 19, 16);
+    max-width: utils.$max-main-article-w;
+  }
+
+  &__title {
+    @extend %h2;
+    color: utils.$c_black;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: 812px;
+  }
+}

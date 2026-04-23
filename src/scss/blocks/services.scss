@@ -1,0 +1,32 @@
+@use '../utils';
+@use '../typography';
+
+.services {
+  &__content {
+    display: grid;
+    @include utils.adaptive-value('row-gap', 72, 90);
+  }
+
+  &__article {
+    display: grid;
+    @include utils.adaptive-value('row-gap', 19, 11);
+    text-align: center;
+  }
+
+  &__title {
+    @extend %h2;
+    color: utils.$c_black;
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px;
+
+    @include utils.onTablet {
+      grid-auto-flow: row;
+      row-gap: 56px;
+      justify-content: center;
+    }
+  }
+}

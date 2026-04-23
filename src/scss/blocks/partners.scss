@@ -1,0 +1,25 @@
+@use '../utils';
+
+.partners {
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    @include utils.adaptive-value('column-gap', 95, 0);
+    align-items: center;
+
+    @include utils.onMobile {
+      grid-auto-flow: row;
+      row-gap: 45px;
+      justify-items: center;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 100%;
+
+    @include utils.onMobile {
+      width: max-content;
+    }
+  }
+}

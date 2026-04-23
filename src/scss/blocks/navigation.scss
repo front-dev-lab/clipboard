@@ -1,0 +1,35 @@
+@use '../utils';
+@use '../typography';
+
+.navigation {
+  width: max-content;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    @include utils.adaptive-value('row-gap', 12, 20);
+
+    @include utils.onMobile {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+
+  &__link {
+    display: block;
+    min-width: 160px;
+    @extend %nav-link-text;
+    color: utils.$c_black;
+    transition-property: color;
+    transition-duration: utils.$amin-time;
+
+    &:hover {
+      color: utils.$c_green;
+    }
+
+    @include utils.onTablet {
+      min-width: max-content;
+    }
+  }
+}

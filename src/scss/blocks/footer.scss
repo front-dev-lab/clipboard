@@ -1,0 +1,34 @@
+@use '../utils';
+
+.footer {
+  @include utils.adaptive-value('padding-block', 39, 51);
+  background-color: utils.$c_light-gray;
+
+  &__content {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @include utils.onTablet {
+      grid-auto-flow: row;
+      justify-content: center;
+      justify-items: center;
+      row-gap: 48px;
+    }
+  }
+
+  &__left {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    @include utils.adaptive-value('column-gap', 135, 0);
+
+    @include utils.onTablet {
+      grid-auto-flow: row;
+      justify-items: center;
+      column-gap: 0;
+      row-gap: 40px;
+    }
+  }
+}

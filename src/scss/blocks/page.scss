@@ -1,0 +1,21 @@
+@use '../utils';
+@use '../typography';
+
+$max-row-gap: 150;
+$min-row-gap: 130;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @extend %main-text;
+  color: utils.$c_gray;
+
+
+  &__content {
+    flex-grow: 1;
+    display: grid;
+    @include utils.adaptive-value('row-gap', $max-row-gap, $min-row-gap);
+    @include utils.adaptive-value('margin-bottom', $max-row-gap, $min-row-gap);
+  }
+}
